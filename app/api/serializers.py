@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from .models import TbDplanificacion, TbDregionGuardia, TbDposta, TbDgrupoGuardia, TbNtipoIncidencia, TbDvariable, TbNhorario, TbRregionHorarioTurno, TbDpatron
+from .models import TbDplanificacion, TbDregionGuardia, TbDposta, TbDgrupoGuardia, TbNtipoIncidencia, TbDvariable, TbNhorario, TbRregionHorarioTurno, TbDpatron, TbDasistencia, TbDincidencia
 
 
 class Planificacion_Serializer(serializers.ModelSerializer):
@@ -54,4 +54,16 @@ class Turno_Serializer(serializers.ModelSerializer):
 class Patron_Serializer(serializers.ModelSerializer):
     class Meta:
         model = TbDpatron
+        fields = '__all__'
+
+
+class Asistencia_Serializer(serializers.ModelSerializer):
+    class Meta:
+        model = TbDasistencia
+        fields = '__all__'
+
+
+class Incidencia_Serializer(serializers.ModelSerializer):
+    class Meta:
+        model = TbDincidencia
         fields = '__all__'
